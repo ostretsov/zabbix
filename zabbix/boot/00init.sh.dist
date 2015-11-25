@@ -15,3 +15,6 @@ sudo -u postgres psql -c "CREATE DATABASE $DBNAME;"
 sudo -u postgres psql -c "CREATE USER $DBUSER WITH password '$DBPASS';"
 sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DBNAME TO $DBUSER;"
 
+mkdir /var/run/zabbix
+chown zabbix:zabbix /var/run/zabbix
+/usr/sbin/zabbix_server
