@@ -16,5 +16,5 @@ RUN wget http://repo.zabbix.com/zabbix/2.4/ubuntu/pool/main/z/zabbix-release/zab
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
         zabbix-server-pgsql \
         zabbix-frontend-php \
-    && sed -ri "s/# php_value date\.timezone Europe\/Riga/php_value date.timezone Europe\/Moscow/" /etc/apache2/conf-available/zabbix.conf
-
+    && sed -ri "s/# php_value date\.timezone Europe\/Riga/php_value date.timezone Europe\/Moscow/" /etc/apache2/conf-available/zabbix.conf \
+    && sed -ri "s/local\s+all\s+all\s+peer/local\tall\tall\tmd5/" /etc/postgresql/9.3/main/pg_hba.conf

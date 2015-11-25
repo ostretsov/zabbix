@@ -12,6 +12,7 @@ stat:
 .PHONY: start
 start:
 	docker-compose rm -f
+	docker-compose build
 	docker-compose up -d
 	make stat
 

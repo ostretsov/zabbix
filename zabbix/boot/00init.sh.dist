@@ -1,6 +1,17 @@
 #!/bin/sh
 
+DBNAME=zabbix
+DBUSER=zabbix
+DBPASS=123
+
 service apache2 start
 
-usermod -u 1000 postgres && groupmod -g 1000 postgres
+chown postgres:postgres /var/lib/postgresql/9.3/main
+chmod 700 /var/lib/postgresql/9.3/main
+sudo -u postgres /usr/lib/postgresql/9.3/bin/initdb -D /var/lib/postgresql/9.3/main
 service postgresql start
+sudo -u postgres /usr/lib/postgresql/9.3/bin/pg_ctl reload -D /var/lib/postgresql/9.3/main/
+sudo -u postgres psql -c "CREATE DATABASE $DBNAME;"
+sudo -u postgres psql -c "CREATE USER $DBUSER WITH password '$DBPASS';"
+sudo -u postgres psql -c "GRANT ALL PRIVILEGES ON DATABASE $DBNAME TO $DBUSER;"
+
