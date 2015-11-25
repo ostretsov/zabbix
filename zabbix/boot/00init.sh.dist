@@ -1,0 +1,6 @@
+#!/bin/sh
+
+service apache2 start
+
+usermod -u 1000 postgres && groupmod -g 1000 postgres
+service postgresql start

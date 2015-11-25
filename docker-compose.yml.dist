@@ -1,0 +1,8 @@
+zabbix:
+  build: ./zabbix
+  ports:
+    - "80:80"
+  volumes:
+    - ./data:/var/lib/postgresql/9.3/main
+    - ./zabbix/boot:/etc/my_init.d
+    - /etc/localtime:/etc/localtime:ro
