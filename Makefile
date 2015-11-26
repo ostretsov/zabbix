@@ -3,6 +3,7 @@ prepare:
 	-cp docker-compose.yml.dist docker-compose.yml
 	-mkdir data
 	-cp -n zabbix/etc/zabbix.conf.php.dist zabbix/etc/zabbix.conf.php
+	-cp -n zabbix/etc/zabbix_server.conf.dist zabbix/etc/zabbix_server.conf
 	-cp -n zabbix/boot/00init.sh.dist zabbix/boot/00init.sh
 	-chmod +x zabbix/boot/00init.sh
 
