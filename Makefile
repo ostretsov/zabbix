@@ -1,6 +1,6 @@
 .PHONY: prepare
 prepare:
-	-cp docker-compose.yml.dist docker-compose.yml
+	-cp -n docker-compose.yml.dist docker-compose.yml
 	-mkdir data
 	-cp -n zabbix/etc/zabbix.conf.php.dist zabbix/etc/zabbix.conf.php
 	-cp -n zabbix/etc/zabbix_server.conf.dist zabbix/etc/zabbix_server.conf
