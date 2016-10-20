@@ -4,3 +4,5 @@ docker-compose.yml
 zabbix/boot/00init.sh
 zabbix/etc/zabbix.conf.php
 zabbix/etc/zabbix_server.conf
+
+zabbix-slack-alertscript
